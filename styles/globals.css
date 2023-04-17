@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Roboto+Mono:ital,wght@0,100;0,400;1,700&family=Roboto+Serif:ital,opsz,wght@0,8..144,200;1,8..144,100;1,8..144,200&family=Roboto+Slab:wght@100;200;600&family=Rubik:ital@1&display=swap');
   /* background: linear-gradient(#e66465, #9198e5); */
-  background: rgb(34, 193, 195);
-  background: linear-gradient(
+  /* background: rgb(34, 193, 195); */
+  /* background: linear-gradient(
     0deg,
     rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 83%
-  );
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
+    rgba(253, 187, 45, 1) 83% */
+  /* ); */
+ body {
+  background-color: #fdfdd3;
+  font-family: 'Poppins', sans-serif;
+  /* height: 100vh; */
 }

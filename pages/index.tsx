@@ -48,10 +48,14 @@ export default function Home() {
           content="Anyone can generate title for their projects"
         />
       </Head>
-      <div className="max-w-8xl mx-auto py-12">
-        <h2 className="text-2xl font-bold text-center pb-2">
+      <div className="max-w-8xl mx-auto my-auto py-12  flex justify-center items-center flex-col mt-[14vh]">
+        <h1 className="text-4xl font-bold text-center pb-2">
           Unique Title Generator
-        </h2>
+        </h1>
+        <h3 className="text-3xl text-center m-4">
+          "Unleash Your Creativity with Our Unique Title Generator <br /> Find
+          Your Perfect Headline!"
+        </h3>
 
         <div className="flex justify-center gap-4 flex-col w-1/3 mx-auto">
           <div className="relative">
@@ -63,7 +67,7 @@ export default function Home() {
             <textarea
               rows={3}
               onChange={(e) => setInput(e.target.value)}
-              className="border-2 w-full border-gray-300 font-bold bg-white p-4 rounded-lg text-sm resize-none focus:outline-none"
+              className="border-4 w-full border-black font-bold bg-white p-4 rounded-lg text-sm resize-none focus:outline-none"
               placeholder="Enter Your Project Title"
               value={input}
             />
