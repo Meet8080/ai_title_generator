@@ -6,7 +6,21 @@ import { useState } from "react";
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState("");
+
+  // api request
+
+  const submit = async () => {
+    const res = await fetch("/api/title-generator", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ input }),
+    });
+    const data = res.json();
+    console.log(data);
+  };
   return (
     <div className="">
       <Head>
@@ -20,21 +34,23 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-center pb-2">
           Unique Title Generator
         </h2>
+
         <div className="flex justify-center gap-4 flex-col w-1/3 mx-auto">
           <div className="relative">
-          <textarea
-            rows={3}
-            onChange={(e)=>setInput(e.target.value)}
-            className="border-2 w-full border-gray-300 font-bold bg-white p-4 rounded-lg text-sm resize-none focus:outline-none"
-            placeholder="Enter Your Project Title"
-            value={input}
-          />
-          {/* Character Limit in bottom right of textarea */}
-          <div className="absolute bottom-4 right-3 text-xs text-gray-400">
-          <span>{input.length}</span>/30
-          </div>
+            <textarea
+              rows={3}
+              onChange={(e) => setInput(e.target.value)}
+              className="border-2 w-full border-gray-300 font-bold bg-white p-4 rounded-lg text-sm resize-none focus:outline-none"
+              placeholder="Enter Your Project Title"
+              value={input}
+            />
+            {/* Character Limit in bottom right of textarea */}
+            <div className="absolute bottom-4 right-3 text-xs text-gray-400">
+              <span>{input.length}</span>/30
+            </div>
           </div>
           <button
+            onClick={submit}
             className="bg-blue-500 hover:bg-blue-700
         text-white font-bold py-2 px-4 rounded"
           >
