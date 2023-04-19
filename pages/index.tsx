@@ -48,11 +48,11 @@ export default function Home() {
           content="Anyone can generate title for their projects"
         />
       </Head>
-      <div className="max-w-8xl mx-auto my-auto py-12  flex justify-center items-center flex-col mt-[14vh]">
+      <div className="max-w-8xl min-h-[80vh] py-12  flex justify-center items-center flex-col mt-[10vh]">
         <h1 className="text-4xl font-bold text-center pb-2">
           Unique Title Generator
         </h1>
-        <h3 className="text-3xl text-center m-4">
+        <h3 className="text-3xl  text-center mb-8">
           "Unleash Your Creativity with Our Unique Title Generator <br /> Find
           Your Perfect Headline!"
         </h3>
@@ -67,7 +67,7 @@ export default function Home() {
             <textarea
               rows={3}
               onChange={(e) => setInput(e.target.value)}
-              className="border-4 w-full border-black font-bold bg-white p-4 rounded-lg text-sm resize-none focus:outline-none"
+              className="border-4 w-full text-[#fdfdd3] font-bold border-yellow-800 bg-black p-5 rounded-lg text-lg resize-none focus:outline-none"
               placeholder="Enter Your Project Title"
               value={input}
             />
@@ -80,27 +80,91 @@ export default function Home() {
               <span>{input.length}</span>/30
             </div>
           </div>
+          <div className="flex justify-around">
+            <button
+              className="border-2 py-2 px-4 rounded-lg border-black"
+              onClick={() => {
+                setInput("Cricket");
+                submit();
+              }}
+            >
+              Cricket
+            </button>
+            <button
+              className="border-2 py-2 px-4 rounded-lg border-black"
+              onClick={() => setInput("Resume")}
+            >
+              Resume
+            </button>
+            <button
+              className="border-2 py-2 px-4 rounded-lg border-black"
+              onClick={() => setInput("Marvel")}
+            >
+              Marvel
+            </button>
+            <button
+              className="border-2 py-2 px-4 rounded-lg border-black"
+              onClick={() => setInput("Football")}
+            >
+              Football
+            </button>
+          </div>
           <button
             onClick={submit}
-            className="bg-blue-500 hover:bg-blue-700
-        text-white font-bold py-2 px-4 rounded"
+            className="bg-black hover:bg-blue-700
+        text-[#fdfdd3] font-bold py-2 px-4 rounded"
           >
             {loading ? "..loading" : "Generate"}
           </button>
 
           {suggestion && (
             <div className="mt-8">
-              <h2 className="text-lg pb-2">
+              <h2 className="text-lg pb-2 ">
                 This could be the name of your project:
               </h2>
               {/* output for the request */}
-              <div className="relative w-full rounded-md bg-gray-500">
+              <div className="relative w-full rounded-md bg-black text-[#fdfdd3] p-2">
                 {suggestion.split("\n").map((item) => (
                   <p className="p-1 ml-4">{item}</p>
                 ))}
               </div>
             </div>
           )}
+        </div>
+        <div className="flex justify-between items-center gap-8">
+          <div className="examples flex justify-between p-6 rounded-lg items-center flex-col text-white mt-12">
+            <div>
+              <div>
+                <p className="text-center">Meet</p>
+              </div>
+              <div>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="examples flex justify-between p-6 rounded-lg items-center flex-col text-white mt-12">
+            <div>
+              <div>
+                <p className="text-center">Meet</p>
+              </div>
+              <div>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+                <p>1. Get the Job You Want with These 10 Resume Writing Tips</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
